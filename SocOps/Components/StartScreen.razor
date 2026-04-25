@@ -1,22 +1,67 @@
-<div class="flex flex-col items-center justify-center min-h-full p-6 bg-princess-background">
-    <div class="text-center max-w-sm">
-        <h1 class="text-5xl font-playfair font-bold text-gradient-princess mb-2 animate-float">Soc Ops</h1>
-        <p class="text-lg text-princess-secondary mb-8 font-semibold">Princess Bingo</p>
+<div class="landing-page min-h-full bg-princess-background relative overflow-hidden">
+    <!-- Floating Decorations -->
+    <div class="absolute inset-0 pointer-events-none">
+        <div class="sparkle sparkle-1">✨</div>
+        <div class="sparkle sparkle-2">💫</div>
+        <div class="sparkle sparkle-3">👑</div>
+        <div class="sparkle sparkle-4">✨</div>
+        <div class="sparkle sparkle-5">🌟</div>
+    </div>
 
-        <div class="bg-gradient-princess-soft rounded-2xl p-6 shadow-princess border border-princess-primary/20 mb-8">
-            <h2 class="font-playfair font-semibold text-princess-primary mb-3">How to Play</h2>
-            <ul class="text-left text-gray-700 text-sm space-y-2">
-                <li>• ✨ Find people who match the questions</li>
-                <li>• 💫 Tap a square when you find a match</li>
-                <li>• 👑 Get 5 in a row to win!</li>
-            </ul>
+    <!-- Hero Section -->
+    <div class="hero-section flex flex-col items-center justify-center min-h-full p-6 relative z-10">
+        <div class="text-center max-w-lg animate-fade-in-up">
+            <h1 class="text-6xl font-playfair font-bold text-gradient-princess mb-3 animate-float-delayed">
+                Soc Ops
+            </h1>
+            <p class="text-xl text-princess-secondary mb-2 font-semibold animate-fade-in-up-delay-1">
+                Princess Bingo Adventure
+            </p>
+            <p class="text-lg text-gray-600 mb-8 animate-fade-in-up-delay-2">
+                Connect with friends through magical social challenges ✨
+            </p>
+
+            <button
+                @onclick="OnStart"
+                class="hero-button bg-gradient-princess text-white font-bold py-5 px-10 rounded-2xl text-xl shadow-princess hover:shadow-princess-lg transition-all duration-300 transform hover:scale-105 animate-pulse-gentle">
+                Begin Your Quest 👑
+            </button>
         </div>
+    </div>
 
-        <button
-            @onclick="OnStart"
-            class="w-full bg-gradient-princess text-white font-bold py-4 px-8 rounded-2xl text-lg shadow-princess hover:shadow-princess-lg transition-all duration-300 transform hover:scale-105">
-            Start Game ✨
-        </button>
+    <!-- Features Section -->
+    <div class="features-section bg-gradient-princess-soft rounded-t-3xl -mt-16 relative z-20 p-8 animate-slide-up-delay">
+        <div class="max-w-md mx-auto">
+            <h2 class="font-playfair font-semibold text-princess-primary text-2xl mb-6 text-center">
+                How to Play
+            </h2>
+
+            <div class="space-y-4">
+                <div class="feature-item flex items-center p-4 bg-white/70 rounded-xl shadow-sm border border-princess-primary/10">
+                    <div class="feature-icon text-2xl mr-4">🔍</div>
+                    <div>
+                        <h3 class="font-semibold text-princess-primary">Find Matches</h3>
+                        <p class="text-sm text-gray-600">Discover people who match the magical questions</p>
+                    </div>
+                </div>
+
+                <div class="feature-item flex items-center p-4 bg-white/70 rounded-xl shadow-sm border border-princess-primary/10">
+                    <div class="feature-icon text-2xl mr-4">🎯</div>
+                    <div>
+                        <h3 class="font-semibold text-princess-primary">Tap to Mark</h3>
+                        <p class="text-sm text-gray-600">Touch a square when you find a perfect match</p>
+                    </div>
+                </div>
+
+                <div class="feature-item flex items-center p-4 bg-white/70 rounded-xl shadow-sm border border-princess-primary/10">
+                    <div class="feature-icon text-2xl mr-4">🏆</div>
+                    <div>
+                        <h3 class="font-semibold text-princess-primary">Win the Crown</h3>
+                        <p class="text-sm text-gray-600">Get 5 in a row to become the bingo champion!</p>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 </div>
 
