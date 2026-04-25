@@ -1,3 +1,16 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap');
+
+:root {
+    /* Princess Theme Color Palette */
+    --princess-primary: #ec4899;
+    --princess-secondary: #9333ea;
+    --princess-winning: #fbbf24;
+    --princess-background: #fdf2f8;
+    --princess-background-light: #fef7f9;
+    --princess-text: #1f2937;
+    --princess-text-light: #6b7280;
+}
+
 html,
 body,
 #app {
@@ -8,6 +21,7 @@ body,
 body {
     font-family: system-ui, -apple-system, sans-serif;
     -webkit-tap-highlight-color: transparent;
+    background: var(--princess-background);
 }
 
 /* Tailwind-like utility classes */
@@ -55,9 +69,12 @@ body {
 .bg-gray-100 { background-color: #f3f4f6; }
 .bg-amber-100 { background-color: #fef3c7; }
 .bg-amber-200 { background-color: #fde68a; }
-.bg-accent { background-color: #2563eb; }
+.bg-accent { background-color: var(--princess-primary); }
 .bg-marked { background-color: #dcfce7; }
 .bg-black\/50 { background-color: rgba(0, 0, 0, 0.5); }
+.bg-princess-secondary { background-color: var(--princess-secondary); }
+.bg-princess-winning { background-color: var(--princess-winning); }
+.bg-princess-background { background-color: var(--princess-background); }
 
 .text-white { color: #ffffff; }
 .text-gray-500 { color: #6b7280; }
@@ -70,6 +87,9 @@ body {
 .text-amber-500 { color: #f59e0b; }
 .text-amber-800 { color: #92400e; }
 .text-amber-900 { color: #78350f; }
+.text-princess-primary { color: var(--princess-primary); }
+.text-princess-secondary { color: var(--princess-secondary); }
+.text-princess-winning { color: var(--princess-winning); }
 
 .text-xs { font-size: 0.75rem; line-height: 1rem; }
 .text-sm { font-size: 0.875rem; line-height: 1.25rem; }
@@ -80,6 +100,7 @@ body {
 
 .font-semibold { font-weight: 600; }
 .font-bold { font-weight: 700; }
+.font-playfair { font-family: 'Playfair Display', serif; }
 
 .text-center { text-align: center; }
 .text-left { text-align: left; }
@@ -90,13 +111,24 @@ body {
 .border-gray-300 { border-color: #d1d5db; }
 .border-amber-400 { border-color: #fbbf24; }
 .border-marked-border { border-color: #22c55e; }
+.border-princess-primary { border-color: var(--princess-primary); }
+.border-princess-secondary { border-color: var(--princess-secondary); }
+.border-princess-winning { border-color: var(--princess-winning); }
 
 .rounded { border-radius: 0.25rem; }
 .rounded-lg { border-radius: 0.5rem; }
 .rounded-xl { border-radius: 0.75rem; }
+.rounded-2xl { border-radius: 1rem; }
+.rounded-full { border-radius: 9999px; }
+
+.bg-gradient-princess { background: linear-gradient(135deg, var(--princess-primary) 0%, var(--princess-secondary) 100%); }
+.bg-gradient-princess-soft { background: linear-gradient(135deg, var(--princess-background-light) 0%, #fce7f3 100%); }
+.text-gradient-princess { background: linear-gradient(135deg, var(--princess-primary) 0%, var(--princess-secondary) 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
 
 .shadow-sm { box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05); }
 .shadow-xl { box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04); }
+.shadow-princess { box-shadow: 0 4px 6px -1px rgba(236, 72, 153, 0.1), 0 2px 4px -1px rgba(236, 72, 153, 0.06); }
+.shadow-princess-lg { box-shadow: 0 10px 15px -3px rgba(236, 72, 153, 0.1), 0 4px 6px -2px rgba(236, 72, 153, 0.05); }
 
 .space-y-2 > * + * { margin-top: 0.5rem; }
 
@@ -116,6 +148,25 @@ body {
 .transition-all { transition-property: all; transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1); transition-duration: 150ms; }
 .transition-colors { transition-property: color, background-color, border-color; transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1); transition-duration: 150ms; }
 .duration-150 { transition-duration: 150ms; }
+.duration-300 { transition-duration: 300ms; }
+
+@keyframes sparkle {
+    0%, 100% { opacity: 0; transform: scale(0.8); }
+    50% { opacity: 1; transform: scale(1.2); }
+}
+
+.animate-sparkle {
+    animation: sparkle 2s ease-in-out infinite;
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+}
+
+.animate-float {
+    animation: float 3s ease-in-out infinite;
+}
 
 button:active .active\:bg-gray-100 { background-color: #f3f4f6; }
 button:active .active\:bg-accent-light { background-color: #3b82f6; }

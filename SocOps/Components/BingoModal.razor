@@ -1,13 +1,13 @@
-<div class="fixed inset-0 bg-black/50 flex items-center justify-center p-4 z-50">
-    <div class="bg-white rounded-xl p-6 max-w-xs w-full text-center shadow-xl animate-[bounce_0.5s_ease-out]">
-        <div class="text-5xl mb-4">🎉</div>
-        <h2 class="text-3xl font-bold text-amber-500 mb-2">BINGO!</h2>
-        <p class="text-gray-600 mb-6">You completed a line!</p>
+<div class="fixed inset-0 bg-black/30 flex items-center justify-center p-4 z-50">
+    <div class="bg-gradient-princess rounded-2xl p-8 max-w-sm w-full text-center shadow-princess-lg animate-float border-4 border-princess-winning">
+        <div class="text-6xl mb-4 animate-sparkle">👑</div>
+        <h2 class="text-4xl font-playfair font-bold text-white mb-2 drop-shadow-lg">BINGO!</h2>
+        <p class="text-white/90 mb-8 font-medium">You are the Princess of Bingo! ✨</p>
 
         <button
             @onclick="OnDismiss"
-            class="w-full bg-accent text-white font-semibold py-3 px-6 rounded-lg active:bg-accent-light transition-colors">
-            Keep Playing
+            class="w-full bg-princess-winning text-white font-bold py-4 px-6 rounded-xl shadow-princess hover:shadow-princess-lg transition-all duration-300 transform hover:scale-105">
+            Keep Playing 👑
         </button>
     </div>
 </div>

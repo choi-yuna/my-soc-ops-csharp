@@ -9,7 +9,11 @@
     <span class="wrap-break-word hyphens-auto">@Square.Text</span>
     @if (Square.IsMarked && !Square.IsFreeSpace)
     {
-        <span class="absolute top-0.5 right-0.5 text-green-600 text-xs">✓</span>
+        <span class="absolute top-0.5 right-0.5 text-princess-primary text-xs animate-sparkle">✨</span>
+    }
+    @if (Square.IsFreeSpace)
+    {
+        <span class="absolute top-0.5 right-0.5 text-princess-winning text-xs">👑</span>
     }
 </button>
 
@@ -25,15 +29,15 @@
 
     private string GetCssClasses()
     {
-        var baseClasses = "relative flex items-center justify-center p-1 text-center border border-gray-300 rounded transition-all duration-150 select-none min-h-[60px] text-xs leading-tight";
+        var baseClasses = "relative flex items-center justify-center p-1 text-center border-2 rounded-xl transition-all duration-300 select-none min-h-[60px] text-xs leading-tight shadow-sm hover:shadow-princess transform hover:scale-105";
 
         var stateClasses = Square.IsMarked
             ? IsWinning
-                ? "bg-amber-200 border-amber-400 text-amber-900"
-                : "bg-marked border-marked-border text-green-800"
-            : "bg-white text-gray-700 active:bg-gray-100";
+                ? "bg-princess-winning border-princess-winning text-white font-bold shadow-princess"
+                : "bg-princess-secondary/10 border-princess-secondary text-princess-secondary"
+            : "bg-white border-princess-primary/30 text-gray-700 hover:border-princess-primary/60 hover:bg-princess-background-light";
 
-        var freeSpaceClasses = Square.IsFreeSpace ? "font-bold text-sm" : "";
+        var freeSpaceClasses = Square.IsFreeSpace ? "bg-gradient-princess border-princess-primary text-white font-bold text-sm shadow-princess" : "";
 
         return $"{baseClasses} {stateClasses} {freeSpaceClasses}";
     }
